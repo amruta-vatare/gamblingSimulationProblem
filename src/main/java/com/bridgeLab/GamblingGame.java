@@ -2,7 +2,7 @@ package com.bridgeLab;
 
 import java.util.Scanner;
 
-public class UC1 {
+public class GamblingGame {
     static int rsPerDay = 100;
     static int ch = 0;
     static int totalWinAmount=0;
@@ -15,6 +15,7 @@ public class UC1 {
         int n = sc.nextInt();
         if(n == 1){
             while (rsPerDay!=0){
+                rsPerDay--;
                 ch = getRandom();
                 switch (ch){
                     case 1:
@@ -30,18 +31,23 @@ public class UC1 {
                 }
             }
         }
-        System.out.println("Win"+winCount+"$ on this day!");
+        if(totalWinAmount<0){
+            System.out.println("Loss "+lossCount+"times on this day!");
+            System.out.println("You loss Game "+totalWinAmount+"$ ");
+        }else{
+            System.out.println("Win "+winCount+"times on this day!");
+            System.out.println("You win amount "+totalWinAmount+"$");
+        }
+
 
     }
 
     private static void gamblingLoss() {
-        rsPerDay--;
         totalWinAmount+=1;
         System.out.println("Win $1");
     }
 
     private static void gamblingWin() {
-        rsPerDay++;
         totalWinAmount-=1;
         System.out.println("Loss $1");
     }
