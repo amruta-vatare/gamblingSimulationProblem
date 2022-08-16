@@ -32,10 +32,10 @@ public class GamblingGame {
             }
         }
         if(totalWinAmount<0){
-            System.out.println("Loss "+lossCount+"times on this day!");
+            System.out.println("Loss "+lossCount+" times on this day!");
             System.out.println("You loss Game "+totalWinAmount+"$ ");
         }else{
-            System.out.println("Win "+winCount+"times on this day!");
+            System.out.println("Win "+winCount+" times on this day!");
             System.out.println("You win amount "+totalWinAmount+"$");
         }
 
@@ -44,12 +44,10 @@ public class GamblingGame {
 
     private static void gamblingLoss() {
         totalWinAmount+=1;
-        System.out.println("Win $1");
     }
 
     private static void gamblingWin() {
         totalWinAmount-=1;
-        System.out.println("Loss $1");
     }
 
     private static int getRandom(){
