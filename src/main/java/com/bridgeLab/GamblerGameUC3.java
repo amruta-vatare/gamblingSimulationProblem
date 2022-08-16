@@ -15,19 +15,23 @@ public class GamblerGameUC3 {
             int n = sc.nextInt();
             if(n == 1){
                 while (rsPerDay!=0){
-                    if(winCount == 50 && lossCount == 50){
-                        System.out.println("You are unable to play more");
-                        break;
-                    }
                     rsPerDay--;
                     ch = getRandom();
                     switch (ch){
                         case 1:
                             gamblingWin();
+                            if(winCount>50){
+                                System.out.println("You won more than 50 unable to play more");
+                                break;
+                            }
                             winCount++;
                             break;
                         case 2:
                             gamblingLoss();
+                            if(lossCount>50){
+                                System.out.println("You won more than 50 unable to play more");
+                                break;
+                            }
                             lossCount++;
                             break;
                         default:
