@@ -61,15 +61,13 @@ public class Gambling {
                 System.out.println("-------------------------------------------------");
             }
             if(netCashMonth < 2000){
-                System.out.println("Your maximum won is amount is "+maximumWon);
-                System.out.println("Your maximum Loss is "+maximumLoss);
                 //UC-5.Each month would like to know the days won and lost and by how much.
                 int lossamt = 2000-netCashMonth;
+                System.out.println("Your maximum Loss is "+maximumLoss);
                 System.out.println("You loss "+dayLoss+" days on this month you loss $"+lossamt);
             }else{
-                System.out.println("Your maximum won is amount is "+maximumWon);
-                System.out.println("Your maximum Loss is "+maximumLoss);
                 int wonamt = netCashMonth - 2000;
+                System.out.println("Your maximum won is amount is "+maximumWon);
                 System.out.println("You won "+dayWon+" days on this month you won $"+wonamt);
             }
 
